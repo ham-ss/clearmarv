@@ -1,0 +1,19 @@
+name: Clearmarv
+version: 1.0
+main: marvtechnology.clearmarv.Clearmarv
+api-version: 1.20
+load: POSTWORLD
+folia-supported: true
+author: mask
+
+commands:
+  clearmarv:
+    description: Clearmarv 管理用コマンド
+    usage: /clearmarv <start|stop|reload|test>
+    permission: clearmarv.admin
+    tab-completer: marvtechnology.clearmarv.commands.ClearmarvCommand
+
+permissions:
+  clearmarv.admin:
+    description: Clearmarv の管理権限
+    default: op

@@ -1,0 +1,3 @@
+countdown:
+  warning: "§c[Warnung] §fIn {time} Sekunden werden unnötige Mobs und gedroppte Items entfernt!"
+  done: "§a{count} Mobs und Items wurden entfernt."

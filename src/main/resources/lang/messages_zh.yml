@@ -1,0 +1,3 @@
+countdown:
+  warning: "§c[警告] §f将在{time}秒后移除不必要的怪物和掉落物品！"
+  done: "§a已移除{count}个怪物和物品。"

@@ -1,0 +1,3 @@
+countdown:
+  warning: "§c[Warning] §fUnwanted mobs and dropped items will be removed in {time} seconds!"
+  done: "§a{count} mobs and items have been removed."

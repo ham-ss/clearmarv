@@ -1,0 +1,74 @@
+# クリーン間隔（秒）：10分ごとに掃除を実行
+clear-interval: 600
+
+# カウントダウン通知（秒前）
+warning-times:
+  - 20
+  - 5
+  - 4
+  - 3
+  - 2
+  - 1
+  - 0
+
+# 削除対象から除外するエンティティ
+# ユーザーが設置するようなもの・演出用オブジェクトなど
+excluded-entities:
+  - minecraft:area_effect_cloud
+  - minecraft:armor_stand
+  - minecraft:arrow
+  - minecraft:block_display
+  - minecraft:boat
+  - minecraft:breeze_wind_charge
+  - minecraft:chest_boat
+  - minecraft:chest_minecart
+  - minecraft:command_block_minecart
+  - minecraft:dragon_fireball
+  - minecraft:egg
+  - minecraft:end_crystal
+  - minecraft:ender_pearl
+  - minecraft:evoker_fangs
+  - minecraft:experience_bottle
+  - minecraft:experience_orb
+  - minecraft:eye_of_ender
+  - minecraft:falling_block
+  - minecraft:fireball
+  - minecraft:firework_rocket
+  - minecraft:furnace_minecart
+  - minecraft:giant
+  - minecraft:glow_item_frame
+  - minecraft:hopper_minecart
+  - minecraft:interaction
+  # ↓ 注意：minecraft:item（= 落ちてるアイテム）は除外しない！掃除対象！
+  - minecraft:item_display
+  - minecraft:item_frame
+  - minecraft:leash_knot
+  - minecraft:lightning_bolt
+  - minecraft:llama_spit
+  - minecraft:marker
+  - minecraft:minecart
+  - minecraft:ominous_item_spawner
+  - minecraft:painting
+  - minecraft:potion
+  - minecraft:shulker_bullet
+  - minecraft:small_fireball
+  - minecraft:snowball
+  - minecraft:spawner_minecart
+  - minecraft:spectral_arrow
+  - minecraft:text_display
+  - minecraft:tnt
+  - minecraft:wind_charge
+  - minecraft:wither_skull
+  # ↓ TNTトロッコは設置状態を守るが、爆破中はコードで削除する
+  - minecraft:tnt_minecart
+
+# 落ちてるアイテムのうち、削除したくないもの（演出用・貴重品など）
+excluded-items:
+  - custom_model_data: 101
+  - custom_model_data: 100
+  - material: minecraft:player_head
+  - material: minecraft:zombie_head
+  - material: minecraft:skeleton_skull
+  - material: minecraft:creeper_head
+  - material: minecraft:dragon_head
+  - material: minecraft:wither_skeleton_skull
