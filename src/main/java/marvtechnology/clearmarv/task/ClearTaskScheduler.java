@@ -76,26 +76,21 @@ public class ClearTaskScheduler {
         final int[] completed = {0};
 
         for (final World world : worlds) {
-            Bukkit.getRegionScheduler().run(
+            Bukkit.getGlobalRegionScheduler().run(
                     Clearmarv.getInstance(),
-                    world,
-                    0, 0,
                     task -> {
                         int removed = EntityClearer.clearEntitiesInWorld(world);
 
-                        // 合計集計と通知はメインスレッドで安全に
-                        Bukkit.getGlobalRegionScheduler().run(Clearmarv.getInstance(), mainTask -> {
-                            removedCount[0] += removed;
-                            completed[0]++;
+                        removedCount[0] += removed;
+                        completed[0]++;
 
-                            if (completed[0] == totalWorlds) {
-                                for (Player player : Bukkit.getOnlinePlayers()) {
-                                    Map<String, String> placeholders = new HashMap<>();
-                                    placeholders.put("count", String.valueOf(removedCount[0]));
-                                    player.sendMessage(MessageManager.get(player, "countdown.done", placeholders));
-                                }
+                        if (completed[0] == totalWorlds) {
+                            for (Player player : Bukkit.getOnlinePlayers()) {
+                                Map<String, String> placeholders = new HashMap<>();
+                                placeholders.put("count", String.valueOf(removedCount[0]));
+                                player.sendMessage(MessageManager.get(player, "countdown.done", placeholders));
                             }
-                        });
+                        }
                     }
             );
         }
